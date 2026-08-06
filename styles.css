@@ -18,8 +18,10 @@ button { font:inherit; cursor:pointer; } .primary { margin-top:18px; border:0;bo
 .mosaic { grid-template-columns:repeat(28,1fr); }
 .mosaic::before { content:""; position:absolute; inset:43px 17px 17px; z-index:0; border-radius:8px; background-image:var(--portrait, none); background-size:cover; background-position:center; opacity:.74; filter:contrast(1.25) saturate(.82); }
 .tile { position:relative; z-index:1; }
-.tile-avatar { opacity:.13; }
+.tile-avatar { opacity:.13; background-size:cover; background-position:center; }
+.cluster-avatar { background-size:cover; background-position:center; }
 .upload-icon { display:block; margin:18px auto 0; }
+.x-login { display:block;margin:0 auto 18px;border:0;border-radius:100px;background:#111;color:#fff;padding:15px 23px;font:inherit;font-weight:700;box-shadow:0 8px 18px #1113; }.x-login strong { font-size:1.12em;margin-right:5px; }.x-login:disabled { opacity:.65; }
 .upload-icon input { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
 .demo-link { display:block; margin:13px auto 0; border:0; background:transparent; color:var(--leaf); font:inherit; font-weight:700; text-decoration:underline; text-underline-offset:4px; }
 .intro .orb { background-size:cover; background-position:center; overflow:hidden; }
