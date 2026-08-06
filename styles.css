@@ -15,7 +15,10 @@ button { font:inherit; cursor:pointer; } .primary { margin-top:18px; border:0;bo
 @media (max-width:560px) { .app-shell { padding-top:32px; }.app-shell.has-result header { padding-top:8px; }.app-shell.has-result h1 { font-size:3.35rem; }.app-shell.has-result .tagline { margin-top:0; }.toolbar { align-items:flex-start;flex-direction:column;margin-top:20px; }.visual { min-height:440px; }.tab { padding:8px 10px;font-size:.78rem; }.mosaic { padding-top:43px; } }
 
 /* The portrait must lead: each miniature person sits lightly over the sampled icon. */
-.tile-avatar { opacity:.36; }
+.mosaic { grid-template-columns:repeat(28,1fr); }
+.mosaic::before { content:""; position:absolute; inset:43px 17px 17px; z-index:0; border-radius:8px; background-image:var(--portrait, none); background-size:cover; background-position:center; opacity:.74; filter:contrast(1.25) saturate(.82); }
+.tile { position:relative; z-index:1; }
+.tile-avatar { opacity:.13; }
 .upload-icon { display:block; margin:18px auto 0; }
 .upload-icon input { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
 .demo-link { display:block; margin:13px auto 0; border:0; background:transparent; color:var(--leaf); font:inherit; font-weight:700; text-decoration:underline; text-underline-offset:4px; }
