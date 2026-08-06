@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>えにし像</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <p class="eyebrow">ENISHI-ZO</p>
+        <h1>えにし像</h1>
+        <p class="tagline">つながりが、あなたの輪郭になる。</p>
+      </header>
+
+      <section class="intro" id="intro">
+        <div class="orb">縁</div>
+        <h2>あなたを形づくる人たちを、見てみよう。</h2>
+        <p>最近の会話、共通のつながり、話題の近さから、あなたのXの関係性を描きます。</p>
+        <button class="primary" id="create">えにし像を結ぶ <span>→</span></button>
+        <p class="note">デモデータで表示します</p>
+      </section>
+
+      <section class="experience hidden" id="experience" aria-live="polite">
+        <div class="toolbar">
+          <div class="tabs" role="tablist" aria-label="表示切替">
+            <button class="tab active" data-view="mosaic" role="tab">えにし像</button>
+            <button class="tab" data-view="clusters" role="tab">つながり</button>
+            <button class="tab" data-view="reasons" role="tab">関係の理由</button>
+          </div>
+          <div class="actions">
+            <button class="share" id="share">↑ 共有する</button>
+            <button class="refresh" id="refresh">↻ 結び直す</button>
+          </div>
+        </div>
+        <div class="visual" id="visual">
+          <div class="mosaic" id="mosaic" aria-label="交流相手で構成されたモザイク"></div>
+          <div class="cluster-map hidden" id="clusterMap"></div>
+          <div class="reason-card hidden" id="reasonCard">
+            <p class="eyebrow">あなたの縁</p>
+            <h2 id="personName">@haru</h2>
+            <p id="personRole">あなたの「話題の近さ」を形づくる人</p>
+            <dl>
+              <div><dt>返信・メンション</dt><dd id="replies">32 回</dd></div>
+              <div><dt>共通のつながり</dt><dd id="mutuals">14 人</dd></div>
+              <div><dt>話題の近さ</dt><dd id="affinity">86%</dd></div>
+            </dl>
+            <p class="hint">モザイクのタイルを選ぶと、その人との縁が見えます。</p>
+          </div>
+        </div>
+        <p class="caption" id="caption">近い縁ほど、あなたの輪郭の近くに。</p>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
