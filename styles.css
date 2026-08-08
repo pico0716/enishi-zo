@@ -14,11 +14,14 @@ button { font:inherit; cursor:pointer; } .primary { margin-top:18px; border:0;bo
 .caption { text-align:center;color:var(--muted);margin:17px 0; }
 @media (max-width:560px) { .app-shell { padding-top:32px; }.app-shell.has-result header { padding-top:8px; }.app-shell.has-result h1 { font-size:3.35rem; }.app-shell.has-result .tagline { margin-top:0; }.toolbar { align-items:flex-start;flex-direction:column;margin-top:20px; }.visual { min-height:440px; }.tab { padding:8px 10px;font-size:.78rem; }.mosaic { padding-top:43px; } }
 
-/* The portrait must lead: each miniature person sits lightly over the sampled icon. */
-.mosaic { grid-template-columns:repeat(28,1fr); }
-.mosaic::before { content:""; position:absolute; inset:43px 17px 17px; z-index:0; border-radius:8px; background-image:var(--portrait, none); background-size:cover; background-position:center; opacity:.74; filter:contrast(1.25) saturate(.82); }
+/* Each visible miniature is a real X profile image; target colour shapes the portrait. */
+.mosaic { grid-template-columns:repeat(18,1fr); gap:1px; }
+.mosaic::before { content:none; }
 .tile { position:relative; z-index:1; }
-.tile-avatar { opacity:.13; background-size:cover; background-position:center; }
+.tile::after { content:"";position:absolute;inset:1px;border-radius:18%;background:var(--target);mix-blend-mode:multiply;opacity:.72;pointer-events:none; }
+.tile-avatar { opacity:1;background-size:cover;background-position:center;filter:contrast(1.06) saturate(.82);border-radius:18%; }
+.real-avatar::before,.real-avatar::after { display:none; }
+.tile:hover .tile-avatar,.tile.selected .tile-avatar { filter:none; }
 .cluster-avatar { background-size:cover; background-position:center; }
 .upload-icon { display:block; margin:18px auto 0; }
 .x-login { display:block;margin:0 auto 18px;border:0;border-radius:100px;background:#111;color:#fff;padding:15px 23px;font:inherit;font-weight:700;box-shadow:0 8px 18px #1113; }.x-login strong { font-size:1.12em;margin-right:5px; }.x-login:disabled { opacity:.65; }
